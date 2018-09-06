@@ -1,0 +1,5 @@
+AddHandler cgi-script .cgi
+<FilesMatch README.md>
+Require all denied
+</FilesMatch>
+

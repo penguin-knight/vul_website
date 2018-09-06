@@ -1,0 +1,16 @@
+#!/usr/bin/ruby
+
+require_relative '../lib/database'
+
+db = Database.instance
+sql = <<-EOF
+CREATE TABLE if not exists events (
+name TEXT NOT NULL,
+date TEXT NOT NULL,
+note TEXT NOT NULL
+);
+EOF
+db.execute_batch sql
+print "Create DB !!\n"
+print "Please chgrp -R www-data db.sqlite3\n"
+print "Please chmod 660 db.sqlite3\n"
